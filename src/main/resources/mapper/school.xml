@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper
+	namespace="site.metacoding.academy.domain.school.SchoolDao">
+
+	<insert id="insert">
+		INSERT INTO school(name) VALUES(#{name})
+	</insert>
+
+	<select id="findAll"
+		resultType="site.metacoding.academy.domain.school.School">
+		SELECT * FROM school
+	</select>
+
+	<select id="findById"
+		resultType="site.metacoding.academy.domain.school.School">
+		SELECT * FROM school WHERE id = #{id}
+	</select>
+	
+	<update id="update">
+		UPDATE school SET name = #{name} WHERE id = #{id}
+	</update>	
+
+	<delete id="deleteById">
+		DELETE FROM school WHERE id = #{id}
+	</delete>
+	
+</mapper>
